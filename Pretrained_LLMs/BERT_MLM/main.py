@@ -8,7 +8,7 @@ from train import train
 if __name__=="__main__":
     df = pd.read_csv('../data/model_data_full.csv') 
     num_epochs = 30 
-    batch_size = 32 
+    batch_size = 64 
     
     # # Heavy Chain Sequences 
     # vh_seqs = df['Antibody VH'].unique().tolist()

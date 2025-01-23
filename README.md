@@ -1,6 +1,6 @@
-# Structure-Aware Large Language Model Improves Prediction of Antibody-Antigen Interaction 
+# Structure-Aware Large Language Model Improves the Prediction of Antibody-Antigen Interaction 
 
-This repository contains the code, datasets, and supplementary materials for our paper:  
+This repository contains the code, and datasets for our paper.  
 <!-- **"[Paper Title]"**  
 [Author Names]  
 

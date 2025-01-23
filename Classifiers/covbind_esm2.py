@@ -174,7 +174,7 @@ if __name__=="__main__":
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') 
     df = pd.read_csv('data/model_data.csv')  
     
-    BATCH_SIZE = 12
+    BATCH_SIZE = 32
     num_epochs = 30  
     train_loader, val_loader = prepare_dataloaders(df['Antibody VH'].tolist(), 
                                                df['Antibody VL'].tolist(), 

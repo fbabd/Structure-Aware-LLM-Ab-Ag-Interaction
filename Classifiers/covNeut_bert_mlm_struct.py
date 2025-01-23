@@ -161,7 +161,7 @@ def train(model, train_loader, val_loader, num_epochs, learning_rate, device, sa
 if __name__=="__main__":
     print("== CovNeut-MLM+Struct ==")
     df = pd.read_csv('data/model_data.csv')  
-    BATCH_SIZE = 12 
+    BATCH_SIZE = 32 
     train_loader, val_loader = prepare_dataloaders(df['Antibody VH'].tolist(), 
                                                df['Antibody VL'].tolist(), 
                                                df['Target'].tolist(),

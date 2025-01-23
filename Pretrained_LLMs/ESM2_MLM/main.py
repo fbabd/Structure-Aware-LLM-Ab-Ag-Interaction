@@ -22,7 +22,7 @@ if __name__=="__main__":
     # model.load_esm2_weights() 
     # train(model, train_sequences, valid_sequences, max_length, mlm_mask_rate, 
     #       num_epochs=30, save_path='saved_model/vh_esm2_mlm', 
-    #       batch_size=16, learning_rate=5e-5, max_grad_norm=1.0, device=device)
+    #       batch_size=64, learning_rate=5e-5, max_grad_norm=1.0, device=device)
     
     
     # Light Chain Model 
@@ -38,7 +38,7 @@ if __name__=="__main__":
     model.load_esm2_weights() 
     train(model, train_sequences, valid_sequences, max_length, mlm_mask_rate, 
           num_epochs=30, save_path='saved_model/vl_esm2_mlm', 
-          batch_size=16, learning_rate=5e-5, max_grad_norm=1.0, device=device)
+          batch_size=64, learning_rate=5e-5, max_grad_norm=1.0, device=device)
     
     
      

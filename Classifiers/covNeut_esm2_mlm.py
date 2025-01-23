@@ -173,7 +173,7 @@ if __name__=="__main__":
     print("== CovNeut-ESM2-MLM ==")
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') 
      
-    BATCH_SIZE = 12 
+    BATCH_SIZE = 32 
     num_epochs = 30   
     
     df = pd.read_csv('data/model_data.csv') 
@@ -215,40 +215,3 @@ if __name__=="__main__":
 
 
 
-
-
-
-
-
-"""
-
-The CovBind-ftESM model, designed for predicting antibody binding, was trained using a robust supervised 
-learning framework. The architecture integrates two pre-trained ESM2 MLM models to independently encode 
-the heavy (VH) and light (VL) chain sequences of antibodies, alongside embeddings of the target antigen. 
-The embeddings of VH, VL, and target antigen were concatenated and passed through a classification layer 
-to predict binding probabilities.
-
-The training dataset consisted of antibody sequence pairs (VH and VL), their corresponding antigen, and binding
-labels. For preprocessing, antibody sequences were tokenized using the ESM2 tokenizer, ensuring consistency 
-with the pre-trained models, while precomputed antigen embeddings were loaded from disk. Labels were 
-represented as binary values indicating binding or non-binding.
-
-Training was conducted using the binary cross-entropy with logits loss function, which is well-suited for 
-binary classification tasks. The model was optimized using the Adam optimizer with a learning rate of 1e-5, 
-providing stability and efficient convergence. To ensure generalization, the dataset was split into training 
-and validation sets, with 80 percent used for training and 20 percent for validation. Data loaders were constructed to 
-process sequences in batches, optimizing memory usage and computational efficiency, particularly for 
-large-scale datasets.
-
-The model was trained for 30 epochs, with performance on the validation set monitored after each epoch. 
-Metrics such as validation loss and accuracy were used to evaluate model generalization. The model checkpoint
-with the highest validation accuracy was saved to avoid overfitting and to preserve the best-performing 
-parameters. For each epoch, gradients were computed and backpropagated, with careful memory management 
-strategies (e.g., clearing gradients and emptying the CUDA cache) to ensure efficient GPU utilization.
-
-This training approach effectively combines transfer learning from pre-trained protein language models with 
-task-specific fine-tuning, leveraging both sequence embeddings and antigen-specific features to achieve robust
-binding predictions.
-
-    
-"""
